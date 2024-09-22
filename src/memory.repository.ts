@@ -6,13 +6,12 @@ import { ISortDto } from './pagination.interface';
 export class MemoryRepository<T extends IEntity> implements IEntityRepository<T> {
   private entities: T[] = [];
 
-  async findAll(sort?: ISortDto): Promise<T[]> {
-    const result = [...this.entities];
-    if (sort) {
-      const [key, order] = Object.entries(sort)[0];
-      result.sort((a, b) => {
+  async findAll(option?: ISortDto): Promise<T[]> {
+    let result = [...this.entities];
+    if (option?.sort) {
+      const [key, order] = Object.entries(option.sort)[0];
+      result = result.sort((a, b) => {
         if (a[key] < b[key]) return order === 'ASC' ? -1 : 1;
-        if (a[key] > b[key]) return order === 'ASC' ? 1 : -1;
         return 0;
       });
     }
