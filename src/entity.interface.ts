@@ -1,7 +1,7 @@
-import { ID } from './id.type';
+import { EID } from './eid.type';
 
 export interface IEntity {
-  eid: ID;
+  eid: EID;
   id?: number;
   _id?: string;
   createdAt: Date;
