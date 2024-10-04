@@ -1,6 +1,6 @@
 {
   "name": "@kerrickchan/ientity",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "GitHub NPM Package of Generic Entity Repository",
   "main": "src/index.ts",
   "repository": "https://github.com/kerrickchan/ientity",
