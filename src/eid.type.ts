@@ -1,1 +1,1 @@
-export type EID = string | number;
+export type EID = string;
